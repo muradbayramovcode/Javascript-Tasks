@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  border: 5px solid black;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.container h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

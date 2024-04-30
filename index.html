@@ -4,36 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 
 <body>
-    <p>Metni daxil edin</p>
-    <input type="text" id="metin">
-    <button onclick="hesabla()">Hesabla</button>
-    <p id="netice"></p>
-
-    <br>
-
-    <p>Sol kenarini daxil edin</p>
-    <input type="text" id="reqem">
-    <p>Ust kenarini daxil edin</p>
-    <input type="text" id="reqem2">
-    <button onclick="hesabla2()">Hesabla</button>
-    <p id="netice2"></p>
-
-    <br>
-
-    <p>Birinci kenarini daxil edin</p>
-    <input type="text" id="reqem_1">
-    <p>Ikinci kenarini daxil edin</p>
-    <input type="text" id="reqem_2">
-    <p>Ucuncu kenarini daxil edin</p>
-    <input type="text" id="reqem_3">
-    <button onclick="hesabla3()">Hesabla</button>
-    <p id="netice3"></p>
-
+    <div class="container">
+        <h1>Javascript Tasks</h1>
+        <div class="cards" style="height:70vh;">
+            <div class="card">
+                <p class="text-center">Daxil edilen metnin uzunlugunu gosterin</p>
+                <input class="form-control" type="text" id="metin">
+                <button class="btn mt-4 mb-2 btn-primary" onclick="hesabla()">Hesabla</button>
+                <p id="netice"></p>
+            </div>
+            <div class="card">
+                <p>Duzbucagin sahesini hesablayin</p>
+                <p class="text-center">Sol kenarini daxil edin</p>
+                <input class="form-control" type="text" id="reqem">
+                <p class="text-center">Ust kenarini daxil edin</p>
+                <input class="mb-4 form-control" type="text" id="reqem2">
+                <button class="btn btn-primary" onclick="hesabla2()">Hesabla</button>
+                <p id="netice2"></p>
+            </div>
+            <div class="card">
+                <p>Ucbucagin sahesini hesablayin (Heron dusturu ile).</p>
+                <p class="text-center">Birinci kenarini daxil edin</p>
+                <input class="form-control" type="text" id="reqem_1">
+                <p class="text-center">Ikinci kenarini daxil edin</p>
+                <input class="form-control" type="text" id="reqem_2">
+                <p class="text-center">Ucuncu kenarini daxil edin</p>
+                <input class="form-control mb-4" type="text" id="reqem_3">
+                <button class="btn btn-primary" onclick="hesabla3()">Hesabla</button>
+                <p id="netice3"></p>
+            </div>
+        </div>
+    </div>
     <script>
         function hesabla() {
             let metin = document.getElementById("metin").value;
@@ -48,14 +55,17 @@
         }
 
         function hesabla3() {
-            let reqem_1 = Number (document.getElementById("reqem_1").value);
-            let reqem_2 = Number (document.getElementById("reqem_2").value);
-            let reqem_3 = Number (document.getElementById("reqem_3").value);
+            let reqem_1 = Number(document.getElementById("reqem_1").value);
+            let reqem_2 = Number(document.getElementById("reqem_2").value);
+            let reqem_3 = Number(document.getElementById("reqem_3").value);
             let halfperimeter = (reqem_1 + reqem_2 + reqem_3) / 2;
-            let sahe = Math.sqrt((halfperimeter * (halfperimeter - reqem_1) * (halfperimeter - reqem_2) * (halfperimeter - reqem_3)));
+            let sahe = Math.sqrt((halfperimeter * (halfperimeter - reqem_1) * (halfperimeter - reqem_2) * (
+                halfperimeter - reqem_3)));
             document.getElementById("netice3").innerHTML = sahe;
         }
     </script>
+    <!-- <script src="./src/js/main.js"></script> -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
