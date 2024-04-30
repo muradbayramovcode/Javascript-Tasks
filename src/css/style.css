@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.card {
-  border: 5px solid black;
-}
-
 .container {
   display: flex;
   flex-direction: column;
