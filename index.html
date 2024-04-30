@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <title>Document</title>
 </head>
+
 <body>
-    <script src="./main.js"></script>
+    <p>Metni daxil edin</p>
+    <input type="text" id="metin">
+    <button onclick="hesabla()">Hesabla</button>
+    <p id="netice"></p>
+
+    <br>
+
+    <p>Sol kenarini daxil edin</p>
+    <input type="text" id="reqem">
+    <p>Ust kenarini daxil edin</p>
+    <input type="text" id="reqem2">
+    <button onclick="hesabla2()">Hesabla</button>
+    <p id="netice2"></p>
+
+    <br>
+
+    <p>Birinci kenarini daxil edin</p>
+    <input type="text" id="reqem_1">
+    <p>Ikinci kenarini daxil edin</p>
+    <input type="text" id="reqem_2">
+    <p>Ucuncu kenarini daxil edin</p>
+    <input type="text" id="reqem_3">
+    <button onclick="hesabla3()">Hesabla</button>
+    <p id="netice3"></p>
+
+    <script>
+        function hesabla() {
+            let metin = document.getElementById("metin").value;
+            document.getElementById("netice").innerHTML = metin.length;
+            document.getElementById("metin").value = "";
+        }
+
+        function hesabla2() {
+            let reqem = document.getElementById("reqem").value;
+            let reqem2 = document.getElementById("reqem2").value;
+            document.getElementById("netice2").innerHTML = reqem * reqem2;
+        }
+
+        function hesabla3() {
+            let reqem_1 = Number (document.getElementById("reqem_1").value);
+            let reqem_2 = Number (document.getElementById("reqem_2").value);
+            let reqem_3 = Number (document.getElementById("reqem_3").value);
+            let halfperimeter = (reqem_1 + reqem_2 + reqem_3) / 2;
+            let sahe = Math.sqrt((halfperimeter * (halfperimeter - reqem_1) * (halfperimeter - reqem_2) * (halfperimeter - reqem_3)));
+            document.getElementById("netice3").innerHTML = sahe;
+        }
+    </script>
 </body>
+
 </html>
